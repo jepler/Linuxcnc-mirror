@@ -35,6 +35,8 @@ Build-Depends:
     libxmu-dev,
     netcat-traditional | netcat-openbsd | netcat,
     po4a <!nodocs>,
+    netpbm,
+    po4a,
     procps,
     psmisc,
     python3,
