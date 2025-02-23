@@ -73,8 +73,8 @@ int Interp::findFile( // ARGUMENTS
     while ((aFile = readdir(aDir))) {
         /*if a directory or link, but not dir . or dir ..*/
         if (((aFile->d_type == DT_DIR) | (aFile->d_type == DT_LNK)) &&
-	    (0 != strcmp(aFile->d_name, "..", 3)) &&
-	    (0 != strcmp(aFile->d_name, ".", 2))) {
+	    (0 != strcmp(aFile->d_name, "..")) &&
+	    (0 != strcmp(aFile->d_name, "."))) {
             char path[PATH_MAX+1];
             snprintf(path, PATH_MAX, "%s/%s", direct, aFile->d_name);
             if (INTERP_OK == findFile(path, target, foundFileDirect)) {

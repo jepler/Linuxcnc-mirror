@@ -954,7 +954,7 @@ int Interp::init()
           if((inistring = inifile.Find("WIZARD_ROOT", "WIZARD")))
           {
             char expandinistring[LINELEN];
-            if (inifile.TildeExpansion(inistring,expandinistring,sizeof(expandinistring))) {
+            if (inifile.TildeExpansion(*inistring,expandinistring,sizeof(expandinistring))) {
                    logDebug("TildeExpansion failed for: %s",inistring);
             }
             printf("Tried WHIZ ini:%s\n",expandinistring);
